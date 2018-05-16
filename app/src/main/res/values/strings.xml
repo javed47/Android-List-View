@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ListView</string>
+    <string-array name="Title">
+        <item>Dhaka</item>
+        <item>Chattogram</item>
+        <item>Shylhet</item>
+        <item>Borisal</item>
+        <item>Khulna</item>
+        <item>Rangpur</item>
+        <item>Rajshahi</item>
+        <item>Mymensingh</item>
+    </string-array>
+
+    <string-array name="Description">
+        <item>Capital of Bangladesh</item>
+        <item>2nd Largest City</item>
+        <item>Best Place for Tea</item>
+        <item>Place with Lots of River</item>
+        <item>Place of 12 Awlias</item>
+        <item>Place for Extreme Hot Atmosphere</item>
+        <item>Place for Visiting \"Jomidar Bari\"</item>
+        <item>Place for Huge Cultivation</item>
+    </string-array>
+</resources>
