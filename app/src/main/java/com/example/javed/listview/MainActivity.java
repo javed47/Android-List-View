@@ -6,6 +6,10 @@ import android.media.Image;
 import android.os.Bundle;
 import android.widget.ListView;
 
+/**
+ * Here the main optimization is done in the CustomListViewAdapter
+ * images id can be changed for the betterment
+ */
 public class MainActivity extends Activity {
 
     ListView list;

@@ -14,11 +14,18 @@ import com.example.javed.listview.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The constructor is changeable
+ * the main optimization is done in the getView method
+ * the optimization is done in a way that after creating all the views once no other new views will create
+ * only the previously built list views will be replaced by new ones
+ */
 class Item{
     String title;
     String description;
     int image;
 
+    //this class is created for dry method of the data to be stored
     public Item(String title, String description, int image) {
         this.title = title;
         this.description = description;
@@ -31,6 +38,7 @@ public class CustomListViewAdapter extends BaseAdapter {
     Context listViewContext;
     ArrayList<Item> single_row_items;
 
+    //Constructor is changeable for other apps
     public CustomListViewAdapter(Context listViewContext, String[] titles, String[] descriptions, int[] images) {
         this.listViewContext = listViewContext;
         single_row_items = new ArrayList<Item>();
@@ -59,13 +67,16 @@ public class CustomListViewAdapter extends BaseAdapter {
         View row = convertView;
         MyViewHolder myViewHolder;
 
+        //if new list item to be created
         if(row == null) {
+            //layout inflater is needed to create for wiring the View object with the xml file
             LayoutInflater inflater = (LayoutInflater)
                     listViewContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(R.layout.single_row_for_list, parent, false);
             myViewHolder = new MyViewHolder(row);
             row.setTag(myViewHolder);
         }else {
+            //else the tagged item should be reused
             myViewHolder = (MyViewHolder) row.getTag();
         }
         Item item =  single_row_items.get(position);
@@ -75,6 +86,7 @@ public class CustomListViewAdapter extends BaseAdapter {
         return row;
     }
 
+    //this class is used for reusing the already built list items
     class MyViewHolder{
         TextView title;
         TextView description;
